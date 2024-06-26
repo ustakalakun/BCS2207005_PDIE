@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <style>
+
+        body{
+            background-image: url("{% static 'mpppage.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .row1{
+            height: 120spx;
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .col1{
+            width: 31%;
+            text-align: center;
+            font-weight: bolder;
+            margin-left: 33%;
+            font-size: 11px;
+            margin-right: 0%;
+            margin-right: 7%;
+        }
+
+        .col2{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .col6{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .row2{
+            width: 100%;
+            border: solid 3px white;
+            display: flex;
+            background-image: url("{% static 'navigation.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        a{
+            font-size: 17px;
+            font-family: sans-serif;
+            font-weight: normal;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .col3{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 27%;
+        }
+
+        .col4{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-right: 0%;
+        }
+
+        .col5{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 190px;
+        }
+
+        .col16{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 0%;
+        }
+
+        .col3,
+        .col4,
+        .col5,
+        .col16{
+            width: 15%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: solid 1px white;
+            text-align: center;
+            height: 40px;
+        }
+
+        .col3:hover,
+        .col4:hover,
+        .col5:hover,
+        .col16:hover{
+            background-image: url("{% static 'black.jpg' %}");
+        }
+
+        .col7{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+            margin-left: 11%;
+        }
+
+        .col8{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+        
+        .col9{
+            width: 3%;
+            height: 3%;
+            margin-top: 26px;
+            margin-left: 1%;
+        }
+
+        .col10{
+            margin-top: 18px;
+            margin-right: 1%;
+            margin-left: 5%;
+        }
+
+        h5{
+            font-size: 15px;
+            font-family: serif
+        }
+
+        .row3{
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        .worklabel,
+    .mpplabel{
+        display: block;
+    }
+
+    .form-input {
+        width: 60%;
+        border: solid 2px black;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .formbold-form-label {
+        color: #07074D;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    .formbold-textarea {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .name,
+    .date,
+    .date2,
+    .perkara,
+    .work,
+    .mpp{
+        color: black;
+        text-align: center;
+        margin-bottom: 1%;
+    }
+
+    .row4{
+            width: 100%;
+            display: flex;
+    }
+
+    .col11{
+        width: 40%;
+        font-size: 25px;
+        text-align: center;
+        border: solid 3px white;
+        margin: auto;
+        margin-top: 3%;
+        color: white;
+    }
+
+    .name{
+        margin-top: 3%;
+    }
+
+    .date,
+    .date2{
+        margin-left:0%
+    }
+
+    .perkara,
+    .work,
+    .mpp{
+        margin-left: 0%;
+    }
+    
+    .save{
+        text-align: center;
+        margin-left: 48.5%;
+        margin-bottom: 2%;
+    }
+
+    .form-activity{
+        background-color: lightblue;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 4%;
+        padding-top: 1px;
+        border: solid 3px white;
+        margin-top: 2%;
+    }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row1">
+            <div class="cols col1">
+                <h1>MAJLIS PERWAKILAN PELAJAR</h1>
+                <h1>KOLEJ PROFESSIONAL MARA BERANANG</h1>
+            </div>
+            <div class="cols col2">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col6">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+        </div>
+        <div class="row2">
+            <div class="cols col3">
+                 <a href="{% url 'homepage2' myMPP.mppId %}">HOMEPAGE</a>
+            </div>
+            <div class="cols col4">
+                <a href="{% url 'activitytask' myMPP.mppId %}">ACTIVITY TASK</a>
+            </div>
+            <div class="cols col16">
+                <a href="{% url 'profilempp' myMPP.mppId %}">PROFILE</a>
+            </div>
+            <div class="cols col5">
+                <a href="{% url 'login' %}">MAIN MENU</a>
+            </div>
+        </div>
+    </header>
+    <article>
+        <div class="row4">
+            <div class="cols col11">
+                <h1>ACTIVITY POST</h1>
+            </div>
+        </div> 
+        <div class="cols form-activity">
+            <form action="{% url 'insertactivity' %}" method="post">
+                {% csrf_token %}
+                <div class="name">
+                    <label for="activityname">Tajuk:</label><br><br>
+                    <input type="text" id="activityname" name="activityname">
+                </div>
+                
+                <div class="date">
+                    <label for="activitystartdate">Tarikh Mula:</label><br><br>
+                    <input type="date" id="date" name="activitystartdate"><br><br>
+                </div>
+                
+                
+                <div class="date2">
+                    <label for="activityenddate">Tarikh Habis:</label><br><br>
+                    <input type="date" id="activityenddate" name="activityenddate"><br><br>
+                </div>
+                
+                <div class="perkara">
+                    <label for="activityperkara" class="perkaralabel">Perkara:</label><br><br>
+                    <textarea
+                        rows="3"
+                        name="activityperkara"
+                        id="activityperkara"
+                        class="form-input"
+                    ></textarea>
+                </div>
+
+                <div class="work">
+                    <label for="activityassignwork" class="worklabel">Gambar:</label><br><br>
+                    <input
+                        type="file"
+                        name="activityassignwork"
+                        id="activityassignwork"
+                        class="form-input"
+                        accept="image/*"
+                    >
+                </div>
+                <input type="submit" value="SAVE" class="save">
+            </form>
+            {{message}}
+        </div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <div class="row3">
+            <div class="cols col7">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col8">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+            <div class="cols col10">
+                <h4>Copyright@MPPKPMB</h4>
+            </div>
+            <div class="cols col10">
+                <h4>Follow us:</h4>
+            </div>
+            <div class="cols col9">
+                <a href="https://www.instagram.com/mppkpmb/">
+                    <img src="{% static 'ig.png' %}" alt=""> 
+                </a>
+            </div>
+        </div>
+    </footer>
+        
+        
+        

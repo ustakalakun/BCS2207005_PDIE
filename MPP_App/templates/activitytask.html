@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPOINTMENT</title>
+    {% load static %}
+    <style>
+
+        body{
+            background-image: url("{% static 'adminpage.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .row1{
+            height: 120spx;
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .col1{
+            width: 31%;
+            text-align: center;
+            font-weight: bolder;
+            margin-left: 33%;
+            font-size: 11px;
+            margin-right: 0%;
+            margin-right: 7%;
+        }
+
+        .col2{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .col6{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .row2{
+            width: 100%;
+            border: solid 3px white;
+            display: flex;
+            background-image: url("{% static 'navigation.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        a{
+            font-size: 17px;
+            font-family: sans-serif;
+            font-weight: normal;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .col3{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 27%;
+        }
+
+        .col4{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-right: 0%;
+        }
+
+        .col5{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 190px;
+        }
+
+        .col16{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-right: 0%;
+        }
+
+
+        .col3,
+        .col4,
+        .col5,
+        .col16{
+            width: 15%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: solid 1px white;
+            text-align: center;
+            height: 40px;
+        }
+
+        .col3:hover,
+        .col4:hover,
+        .col5:hover,
+        .col16:hover{
+            background-image: url("{% static 'black.jpg' %}");
+        }
+
+        .col7{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+            margin-left: 11%;
+        }
+
+        .col8{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+        
+        .col9{
+            width: 3%;
+            height: 3%;
+            margin-top: 26px;
+            margin-left: 1%;
+        }
+
+        .col10{
+            margin-top: 18px;
+            margin-right: 1%;
+            margin-left: 5%;
+        }
+
+        h5{
+            font-size: 15px;
+            font-family: serif
+        }
+
+        .row3{
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        .title {
+            text-align: center;
+            color: black;
+            padding: 20px 0;
+            margin: 0;
+        }
+
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            color: white;
+
+        }
+
+        .activity {
+            background-color: black;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #FFFDD0;
+            border-radius: 5px;
+        }
+
+        .activity div {
+            margin-bottom: 5px;
+        }
+
+        .activity-header {
+            font-weight: bold;
+            background-color: #556B2F;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .preformatted {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .update, .delete {
+            color: blue;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .delete {
+            color: red;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row1">
+            <div class="cols col1">
+                <h1>MAJLIS PERWAKILAN PELAJAR</h1>
+                <h1>KOLEJ PROFESSIONAL MARA BERANANG</h1>
+            </div>
+            <div class="cols col2">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col6">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+        </div>
+        <div class="row2">
+            <div class="cols col3">
+                <a href="{% url 'homepage2' myMPP.mppId %}">PROFILE</a>
+            </div>
+            <div class="cols col4">
+                <a href="{% url 'insertactivity' myMPP.mppId %}">ACTIVITY POST</a>
+            </div>
+            <div class="cols col16">
+                <a href="{% url 'profilempp' myMPP.mppId %}">PROFILE</a>
+            </div>
+            <div class="cols col5">
+                <a href="{% url 'login' %}">MAIN MENU</a>
+            </div>
+        </div>
+    </header><br><br><br>
+    <article>
+        <div class="container">
+            <div class="cols title">
+                <h1>ACTIVITY TASK</h1>
+            </div>
+            {% for data in activitytask %}
+                <div class="activity">
+                    <div class="activity-header">Nama Aktiviti:</div>
+                    <div>{{data.activityassignname}}</div><br>
+                    <div class="activity-header">Tarikh Mula:</div>
+                    <div>{{data.activityassigndate}}</div><br>
+                    <div class="activity-header">Tarikh Habis:</div>
+                    <div>{{data.activityassigndate2}}</div><br>
+                    <div class="activity-header">Perkara:</div>
+                    <div class="preformatted">{{data.activityassignperkara}}</div><br>
+                    <div class="activity-header">Bidang Tugas:</div>
+                    <div class="preformatted">{{data.activityassignwork}}</div><br>
+                    <div class="activity-header">Ditugaskan Oleh:</div>
+                    <div class="preformatted">{{data.activityassignmpp}}</div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </article>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <div class="row3">
+            <div class="cols col7">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col8">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+            <div class="cols col10">
+                <h4>Copyright@MPPKPMB</h4>
+            </div>
+            <div class="cols col10">
+                <h4>Follow us:</h4>
+            </div>
+            <div class="cols col9">
+                <a href="https://www.instagram.com/mppkpmb/">
+                    <img src="{% static 'ig.png' %}" alt=""> 
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

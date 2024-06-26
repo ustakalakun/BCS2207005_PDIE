@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Activity Assign</title>
+    {% load static %}
+    <style>
+
+body{
+            background-image: url("{% static 'mpppage.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .row1{
+            height: 120spx;
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .col1{
+            width: 31%;
+            text-align: center;
+            font-weight: bolder;
+            margin-left: 33%;
+            font-size: 11px;
+            margin-right: 0%;
+            margin-right: 7%;
+        }
+
+        .col2{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .col6{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .row2{
+            width: 100%;
+            border: solid 3px white;
+            display: flex;
+            background-image: url("{% static 'navigation.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        a{
+            font-size: 17px;
+            font-family: sans-serif;
+            font-weight: normal;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .col3{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 27%;
+        }
+
+        .col4{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-right: 0%;
+        }
+
+        .col5{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 190px;
+        }
+
+        .col16{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 0%;
+        }
+
+        .col3,
+        .col4,
+        .col5,
+        .col16{
+            width: 15%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: solid 1px white;
+            text-align: center;
+            height: 40px;
+        }
+
+        .col3:hover,
+        .col4:hover,
+        .col5:hover,
+        .col16:hover{
+            background-image: url("{% static 'black.jpg' %}");
+        }
+
+        .col7{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+            margin-left: 11%;
+        }
+
+        .col8{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+        
+        .col9{
+            width: 3%;
+            height: 3%;
+            margin-top: 26px;
+            margin-left: 1%;
+        }
+
+        .col10{
+            margin-top: 18px;
+            margin-right: 1%;
+            margin-left: 5%;
+        }
+
+        h5{
+            font-size: 15px;
+            font-family: serif
+        }
+
+        .row3{
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            color: cornsilk;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #556B2F;
+            color: #FFFDD0;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6B8E23;
+        }
+
+        .back-link {
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row1">
+            <div class="cols col1">
+                <h1>MAJLIS PERWAKILAN PELAJAR</h1>
+                <h1>KOLEJ PROFESSIONAL MARA BERANANG</h1>
+            </div>
+            <div class="cols col2">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col6">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+        </div>
+    </header>
+    <article>
+        <br><br><br>
+        <form method="post" action="{% url 'update_viewactivityassign' data.activityassignname %}">
+            {% csrf_token %}
+            <div class="name">
+                <label for="activityassignname">Nama Aktiviti:</label><br><br>
+                <input type="text" id="activityassignname" name="activityassignname" value="{{ data.activityassignname }}" readonly>
+            </div>
+
+            <div class="date">
+                <label for="activityassigndate">Tarikh Mula:</label><br><br>
+                <input type="date" id="activityassigndate" name="activityassigndate" value="{{ data.activityassigndate|date:'Y-m-d' }}"><br><br>
+            </div>
+
+            <div class="date2">
+                <label for="activityassigndate2">Tarikh Habis:</label><br><br>
+                <input type="date" id="activityassigndate2" name="activityassigndate2" value="{{ data.activityassigndate2|date:'Y-m-d' }}"><br><br>
+            </div>
+
+            <div class="perkara">
+                <label for="activityassignperkara" class="perkaralabel">Perkara:</label><br><br>
+                <textarea
+                    rows="3"
+                    name="activityassignperkara"
+                    id="activityassignperkara"
+                    class="form-input">{{ data.activityassignperkara }}</textarea>
+            </div>
+
+            <div class="work">
+                <label for="activityassignwork" class="worklabel">Bidang Tugas:</label><br><br>
+                <textarea
+                    rows="6"
+                    name="activityassignwork"
+                    id="activityassignwork"
+                    class="form-input">{{ data.activityassignwork }}</textarea>
+            </div>
+
+            <div class="mpp">
+                <label for="activityassignmpp" class="mpplabel">Ditugaskan Oleh:</label><br><br>
+                <textarea
+                    rows="6"
+                    name="activityassignmpp"
+                    id="activityassignmpp"
+                    class="form-input">{{ data.activityassignmpp }}</textarea>
+            </div>
+
+            <input type="submit" value="Update Activity Assign">
+        </form>
+
+        <a href="{% url 'viewactivityassign' %}" class="back-link">Back to Activity Assign List</a>
+    </article>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <div class="row3">
+            <div class="cols col7">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col8">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+            <div class="cols col10">
+                <h4>Copyright@MPPKPMB</h4>
+            </div>
+            <div class="cols col10">
+                <h4>Follow us:</h4>
+            </div>
+            <div class="cols col9">
+                <a href="https://www.instagram.com/mppkpmb/">
+                    <img src="{% static 'ig.png' %}" alt=""> 
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

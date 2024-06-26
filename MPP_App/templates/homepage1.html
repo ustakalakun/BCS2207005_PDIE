@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <style>
+
+        body{
+            background-image: url("{% static 'studentpage.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .row1{
+            height: 120spx;
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .col1{
+            width: 31%;
+            text-align: center;
+            font-weight: bolder;
+            margin-left: 33%;
+            font-size: 11px;
+            margin-right: 0%;
+            margin-right: 7%;
+
+        }
+
+        .col2{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .col9{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .row2{
+            width: 100%;
+            border: solid 3px white;
+            display: flex;
+            background-image: url("{% static 'navigation.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        a{
+            font-size: 17px;
+            font-family: sans-serif;
+            font-weight: normal;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .col3{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 27%;
+        }
+
+        .col4{
+            background-image: url("{% static 'navigation.jpg' %}");
+        }
+
+        .col5{
+            background-image: url("{% static 'navigation.jpg' %}");
+            margin-left: 189px;
+        }
+
+        .col3,
+        .col4,
+        .col5{
+            width: 15%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: solid 1px white;
+            text-align: center;
+        }
+
+        .col3:hover,
+        .col4:hover,
+        .col5:hover {
+            background-image: url("{% static 'black.jpg' %}");
+        }
+
+        .row3{
+            width: 75%;
+            display: flex;
+            margin: auto;
+        }
+
+        .col6{
+            margin: auto;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .col7{
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            padding-left: 1%;
+            padding-right: 1%;
+            border: solid 2px white;
+            color: white;
+            font-weight: bold;
+        }
+
+        .row4{
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        .col8{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+            margin-left: 11%;
+        }
+
+        .col10{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+        
+        .col11{
+            width: 3%;
+            height: 3%;
+            margin-top: 26px;
+            margin-left: 1%;
+        }
+
+        .col12{
+            margin-top: 18px;
+            margin-right: 1%;
+            margin-left: 5%;
+        }
+
+        h5{
+            font-size: 15px;
+            font-family: serif
+        }
+       
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row1">
+            <div class="cols col1">
+                <h1>MAJLIS PERWAKILAN PELAJAR</h1>
+                <h1>KOLEJ PROFESSIONAL MARA BERANANG</h1>
+            </div>
+            <div class="cols col2">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col9">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+        </div>
+        <div class="row2">
+            <div class="cols col3">
+                <a href="{% url 'organization' %}">ORGANIZATION</a>
+            </div>
+            <div class="cols col4">
+                <a href="{% url 'activity' %}">ACTIVITY</a>
+            </div>
+            <div class="cols col4">
+                <a href="{% url 'report' %}">STUDENT PROBLEM REPORT</a>
+            </div>
+            <div class="cols col5">
+                <a href="{% url 'login' %}">MAIN MENU</a>
+            </div>
+        </div>
+    </header>
+    <br><br>
+    <article>
+        <div class="row3">
+            <div class="cols col6">
+                <h2>TENTANG MPP</h2>
+            </div>
+        </div>
+        <div class="row3">
+            <div class="cols col7">
+                <h3>Majlis Perwakilan Pelajar (MPP) merupakan badan yang sangat penting dalam banyak institusi pendidikan, seperti kolej, dan 
+                    universiti. MPP ditubuhkan dengan pelbagai tujuan yang berfungsi untuk kepentingan pelajar dan komuniti pelajar secara 
+                    keseluruhannya. Salah satu tujuan utama MPP adalah untuk menyuarakan kepentingan pelajar. Mereka bertindak sebagai perantara 
+                    antara pelajar dan pihak pentadbiran institusi. Dengan cara ini, MPP membantu memastikan bahawa suara pelajar didengar dan 
+                    bahawa isu-isu yang mereka hadapi, sama ada berkaitan dengan pelajaran, kemudahan, atau isu sosial, mendapat perhatian yang 
+                    sewajarnya. Secara keseluruhannya, MPP adalah aspek yang sangat penting dalam pembangunan institusi pendidikan yang berkesan. 
+                    Mereka membantu membina komuniti pelajar yang dinamik, memberikan peluang kepada pelajar untuk mempengaruhi pengalaman mereka 
+                    dalam pendidikan, dan memastikan kepentingan dan kebajikan pelajar dipelihara. 
+                </h3>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="row3">
+            <div class="cols col6">
+                <h2>VISI</h2>
+            </div>
+        </div>
+        <div class="row3">
+            <div class="cols col7">
+                <h3>Memperjuangkan kepentingan pelajar, meningkatkan kualiti pendidikan, menjadi pemangkin utama dalam mewujudkan institusi 
+                    pendidikan yang inklusif, inovatif, serta memberikan sokongan komprehensif untuk meningkatkan kualiti kehidupan pelajar dan 
+                    pencapaian akademik mereka.
+                </h3>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="row3">
+            <div class="cols col6">
+                <h2>MISI</h2>
+            </div>
+        </div>
+        <div class="row3">
+            <div class="cols col7">
+                <h3>Menyuarakan kepentingan pelajar, memastikan keadilan, mempromosikan kerjasama antara pelajar dan pihak pentadbiran, serta 
+                    mewujudkan program dan perkhidmatan yang memenuhi keperluan pelajar, semuanya dengan tumpuan kepada peningkatan kualiti 
+                    pendidikan. 
+                </h3>
+            </div>
+        </div>
+    </article>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <div class="row4">
+            <div class="cols col8">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col10">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+            <div class="cols col12">
+                <h4>Copyright@MPPKPMB</h4>
+            </div>
+            <div class="cols col12">
+                <h4>Follow us:</h4>
+            </div>
+            <div class="cols col11">
+                <a href="https://www.instagram.com/mppkpmb/">
+                    <img src="{% static 'ig.png' %}" alt=""> 
+                </a>
+            </div>
+        </div>
+    </footer>
+        
+        
+        

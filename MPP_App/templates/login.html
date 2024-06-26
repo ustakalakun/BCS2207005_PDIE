@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <style>
+
+        body{
+            background-image: url("{% static 'mainmenubg.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat
+        }
+
+        .row1{
+            border: solid red 2px;
+            height: 120spx;
+            width: 100%;
+            display: flex;
+            margin-bottom: 4%;
+            background-color: white;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .col1{
+            width: 31%;
+            text-align: center;
+            font-weight: bolder;
+            margin-left: 33%;
+            font-size: 11px;
+            margin-right: 0%;
+            margin-right: 7%;
+        }
+
+        .col2{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .col5{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+
+        .row2{
+            width: 100%;
+            display: flex;
+        }
+
+        .col3{
+            width: 20%;
+            height: 260px;
+            border: solid 9px black;
+            margin-bottom: 135px;
+            margin-left: 40%;
+        }
+
+        .button{
+            width: 15%;
+            height: 350px;
+        }
+
+
+
+        .col4{
+            text-align: center;
+            font-size: 26px;
+            color: red;
+            margin-left: 31%;
+            margin-bottom: 3%;
+        }
+
+        .col6{
+            width: 6%;
+            height: 90px;
+            margin-top: 7px;
+            margin-left: 11%;
+        }
+
+        .col7{
+            width: 23%;
+            height: 90px;
+            margin-top: 7px;
+        }
+        
+        .col8{
+            width: 3%;
+            height: 3%;
+            margin-top: 26px;
+            margin-left: 1%;
+        }
+
+        .col9{
+            margin-top: 18px;
+            margin-right: 1%;
+            margin-left: 5%;
+        }
+
+        h5{
+            font-size: 15px;
+            font-family: serif
+        }
+
+        .row3{
+            width: 100%;
+            display: flex;
+            background-color: white;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row1">
+            <div class="cols col1">
+                <h1>MAJLIS PERWAKILAN PELAJAR</h1>
+                <h1>KOLEJ PROFESSIONAL MARA BERANANG</h1>
+            </div>
+            <div class="cols col2">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col5">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+        </div>
+    </header>
+    <article>
+        <div class="row2">
+            <div class="cols col4">
+                <h1> Please Click the Image to Continue!</h1>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="cols col3">
+                <a href="{% url 'homepage1' %}">
+                    <img src="{% static 'logo guest.png' %}" alt=""> 
+                </a>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="cols col3">
+                <a href="{% url 'loginmpp' %}">
+                    <img src="{% static 'logo mpp member.png' %}" alt=""> 
+                </a>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="cols col3">
+                <a href="{% url 'loginadmin' %}">
+                    <img src="{% static 'logo admin.png' %}" alt=""> 
+                </a>
+            </div>
+        </div>
+    </article>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <div class="row3">
+            <div class="cols col6">
+                {% load static %}
+                <img src="{% static 'logo MPP.png' %}" alt="">
+            </div>
+            <div class="cols col7">
+                {% load static %}
+                <img src="{% static 'kpm.png' %}" alt="">
+            </div>
+            <div class="cols col9">
+                <h4>Copyright@MPPKPMB</h4>
+            </div>
+            <div class="cols col9">
+                <h4>Follow us:</h4>
+            </div>
+            <div class="cols col8">
+                <a href="https://www.instagram.com/mppkpmb/">
+                    <img src="{% static 'ig.png' %}" alt=""> 
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
